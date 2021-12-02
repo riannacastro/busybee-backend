@@ -10,7 +10,7 @@ class ListsController < ApplicationController
     end
 
     def create
-        list = List.new
+        list = List.new(list_params)
         if list.save
             render json: list
         end
@@ -18,8 +18,9 @@ class ListsController < ApplicationController
     
     def update
         list = List.find_by_id(params[:id])
-        if list.update
+        if list.update(list_params)
             render json :list
+        end
     end
 
     def destroy
@@ -27,4 +28,11 @@ class ListsController < ApplicationController
         list.destroy
         render json: {message: "#{list.title} deleted."}
     end
+
+    private
+
+    def list_params
+        params.require(:list).permit(:title, :task1)
+    end
+
 end
