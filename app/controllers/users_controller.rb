@@ -5,11 +5,16 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.all
+        user = User.find_by_id(params[:id])
         render json: user
     end
 
     def create
+        # user = User.new(user_params)
+        # if user.save
+        #     render json :user
+        end
+
     end
     
     def update
