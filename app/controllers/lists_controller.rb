@@ -5,6 +5,8 @@ class ListsController < ApplicationController
     end
 
     def show
+        list = List.all
+        render json: list
     end
 
     def create

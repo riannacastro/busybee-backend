@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     end
 
     def show
+        user = User.all
+        render json: user
     end
 
     def create
