@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_005357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "tasks", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.string "title"
     t.string "task1"
     t.string "task2"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_005357) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,5 +35,5 @@ ActiveRecord::Schema.define(version: 2021_12_02_005357) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "tasks", "users"
+  add_foreign_key "lists", "users"
 end
