@@ -31,8 +31,8 @@ class ListsController < ApplicationController
 
     private
 
-    def list_params
-        params.require(:list).permit(:title, :task1)
-    end
+    # def list_params
+    #     params.require(:list).permit(:title, :task)
+    # end
 
 end
