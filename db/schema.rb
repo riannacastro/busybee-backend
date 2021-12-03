@@ -17,11 +17,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_005357) do
 
   create_table "lists", force: :cascade do |t|
     t.string "title"
-    t.string "task1"
-    t.string "task2"
-    t.string "task3"
-    t.string "task4"
-    t.string "task5"
+    t.text "tasks"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
