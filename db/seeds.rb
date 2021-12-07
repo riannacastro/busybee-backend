@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(name: "Ri", username:"riri")
 
-List.create(title: "Work List", tasks: "- sign in, - check emails, - fix printer, - fix chromebook, - TC meeting", user: user1)
+List.create(title: "Work List", tasks: "- sign in, - check emails, - fix printer, - fix chromebook, - TC meeting", important: true, finished: false, user: user1)

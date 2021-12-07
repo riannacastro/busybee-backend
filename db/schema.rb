@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_005357) do
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.text "tasks"
+    t.boolean "important", default: false
+    t.boolean "finished", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
